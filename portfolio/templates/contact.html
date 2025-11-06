@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}কনট্যাক্ট | পোর্টফোলিও{% endblock %}
+{% block content %}
+  <div class="container" style="max-width:720px;">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }}" role="alert">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <h1 class="mb-3">আমাকে মেসেজ করো</h1>
+    <form method="post" class="vstack gap-3">
+      <div>
+        <label class="form-label">তোমার নাম</label>
+        <input class="form-control" type="text" name="name" required />
+      </div>
+      <div>
+        <label class="form-label">ইমেইল</label>
+        <input class="form-control" type="email" name="email" required />
+      </div>
+      <div>
+        <label class="form-label">মেসেজ</label>
+        <textarea class="form-control" name="message" rows="5" required></textarea>
+      </div>
+      <button class="btn btn-dark" type="submit">পাঠাও</button>
+    </form>
+  </div>
+{% endblock %}
