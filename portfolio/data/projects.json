@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Smart To‑Do App",
+    "desc": "Flask + SQLite দিয়ে বানানো টু‑ডু ম্যানেজার",
+    "tags": ["Flask", "SQLite", "CRUD"],
+    "link": "https://github.com/yourname/todo",
+    "image": "/static/img/project-1.jpg"
+  },
+  {
+    "title": "Portfolio Website",
+    "desc": "এই সাইটটাই! রেসপন্সিভ লেআউট, ক্লিন UI",
+    "tags": ["HTML", "CSS", "Flask"],
+    "link": "https://yourdomain.com",
+    "image": "/static/img/project-1.jpg"
+  },
+  {
+    "title": "Weather CLI",
+    "desc": "Python CLI দিয়ে আবহাওয়ার তথ্য দেখার টুল",
+    "tags": ["Python"],
+    "link": "https://github.com/yourname/weather-cli",
+    "image": "/static/img/project-1.jpg"
+  }
+]
