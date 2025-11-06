@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}হোম | পোর্টফোলিও{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="Avatar" class="img-fluid rounded-4 shadow" />
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold">হাই, আমি মিরাজ 👋</h1>
+        <p class="lead">আমি একজন Python ও Web Developer। ক্লিন UI, পারফরম্যান্স আর সিম্পল আর্কিটেকচার পছন্দ করি।</p>
+        <div class="d-flex gap-3">
+          <a class="btn btn-dark btn-lg" href="/projects">আমার কাজগুলো দেখো</a>
+          <a class="btn btn-outline-dark btn-lg" href="/contact">মেসেজ করো</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <h2 class="mb-4">Featured Projects</h2>
+    <div class="row g-4">
+      {% for p in projects %}
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="{{ p.image }}" class="card-img-top" alt="{{ p.title }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ p.title }}</h5>
+            <p class="card-text text-muted">{{ p.desc }}</p>
+            <div class="mb-2">
+              {% for t in p.tags %}
+                <span class="badge bg-secondary">{{ t }}</span>
+              {% endfor %}
+            </div>
+            <a href="{{ p.link }}" target="_blank" class="btn btn-sm btn-dark">View</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
