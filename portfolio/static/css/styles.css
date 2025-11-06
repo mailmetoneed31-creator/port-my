@@ -1,0 +1,6 @@
+:root { --text:#262626; --muted:#6b7280; }
+*{ box-sizing: border-box; }
+body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text); }
+.navbar-brand{ letter-spacing:.3px; }
+.badge{ margin-right: .25rem; }
+img{ object-fit: cover; }
