@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}প্রজেক্টস | পোর্টফোলিও{% endblock %}
+{% block content %}
+  <div class="container">
+    <h1 class="mb-4">All Projects</h1>
+    <div class="row g-4">
+      {% for p in projects %}
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="{{ p.image }}" class="card-img-top" alt="{{ p.title }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ p.title }}</h5>
+            <p class="card-text text-muted">{{ p.desc }}</p>
+            <div class="mb-2">
+              {% for t in p.tags %}
+                <span class="badge bg-secondary">{{ t }}</span>
+              {% endfor %}
+            </div>
+            <a href="{{ p.link }}" target="_blank" class="btn btn-sm btn-dark">View</a>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <p>এখনো কোন প্রজেক্ট যোগ করোনি। `data/projects.json` আপডেট করো।</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
